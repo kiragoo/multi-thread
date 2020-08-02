@@ -1,4 +1,4 @@
-package com.kirago.cp03;
+package com.kirago.cp02.demo03;
 
 public class ThreadB extends Thread{
     

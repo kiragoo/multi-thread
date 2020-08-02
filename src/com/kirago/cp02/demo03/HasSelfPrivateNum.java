@@ -1,4 +1,4 @@
-package com.kirago.cp03;
+package com.kirago.cp02.demo03;
 
 /**
 * @Description:    通过对方法进行加锁实现线程安全
