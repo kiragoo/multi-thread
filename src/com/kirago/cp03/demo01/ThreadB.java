@@ -12,8 +12,8 @@ public class ThreadB extends Thread{
     public void run(){
         try {
             while (true){
-                if(service.getSize() == 5){
-                    System.out.println("== 5 了,线程 " + Thread.currentThread().getName() + " 要退出了" );
+                if(service.getSize() >= 5){
+                    System.out.println(">= 5 了,线程 " + Thread.currentThread().getName() + " 要退出了" );
                     throw new InterruptedException();
                 }
             }
