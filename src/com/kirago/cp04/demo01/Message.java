@@ -1,4 +1,4 @@
-package com.kirago.cp03.demo02;
+package com.kirago.cp04.demo01;
 
 public class Message {
     
