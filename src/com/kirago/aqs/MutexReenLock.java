@@ -23,7 +23,8 @@ public class MutexReenLock {
             state.incrementAndGet();
             return;
         }
-        
+        // 判断是否有线程持有锁，为 null 时表示没有现成持有锁，那么就无需进入到if 代码块内执行对应逻辑，否则说明有线程持有锁，
+        // 那么需要将当前线程放入到等待队列。
         if(!owner.compareAndSet(null, currentThread)){
             waitQueue.add(currentThread);
             LockSupport.park();
@@ -44,6 +45,7 @@ public class MutexReenLock {
             owner.set(t);
             LockSupport.unpark(t);
         }else {
+            // 用来表示没有现成持有锁了
             owner.set(null);
         }
     }
